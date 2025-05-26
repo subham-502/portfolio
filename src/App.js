@@ -11,6 +11,7 @@ import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 
 import './App.css';
+import Journey from './components/Journey/Journey';
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('hero');
@@ -68,6 +69,10 @@ const App = () => {
 
         <section id="about" className="snap-start">
           <About />
+        </section>
+
+        <section id="journey" className="snap-start">
+          <Journey />
         </section>
 
         <section id="roadmap" className="snap-start">

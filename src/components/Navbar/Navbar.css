@@ -13,7 +13,7 @@
 /* Navbar Root */
 .navbar90s-root {
   width: 100%;
-  background: var(--bg);
+  background: transparent;
   border-bottom: 1px solid var(--accent);
   font-family: var(--font-main), 'Press Start 2P', 'VT323', 'Courier New', Courier, monospace;
   position: sticky;
