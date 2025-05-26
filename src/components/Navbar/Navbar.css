@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  --accent: #00e0ff;
+  --accent-gradient: linear-gradient(90deg, #00e0ff 0%, #ffe600 100%);
+  --bg: #000;
+  --fg: #fff;
+  --muted: #b0b8c1;
+  --border: #222;
+  --font-main: 'Satoshi', 'Inter', system-ui, Arial, sans-serif;
+}
+
+/* Navbar Root */
+.navbar90s-root {
+  width: 100%;
+  background: var(--bg);
+  border-bottom: 1px solid var(--accent);
+  font-family: var(--font-main), 'Press Start 2P', 'VT323', 'Courier New', Courier, monospace;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 1.5px 0 #00e0ff44;
+}
+
+/* Navbar List */
+.navbar90s-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 64px;
+}
+
+/* Navbar Items */
+.navbar90s-item {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+/* Navbar Links */
+.navbar90s-link {
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: var(--accent);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  padding: 10px 22px 8px 22px;
+  border-radius: 10px 10px 0 0;
+  border: 1px solid transparent;
+  border-bottom: none;
+  background: transparent;
+  transition: background 0.18s, color 0.18s, border-color 0.18s;
+  outline: none;
+  box-shadow: none;
+  text-shadow: 0 1px 0 #111, 0 0 8px #00e0ff88;
+}
+
+.navbar90s-link:focus {
+  background: #0a1824;
+  color: #ffe600;
+  border-color: var(--accent);
+}
+
+.navbar90s-link.active,
+.navbar90s-link:hover {
+  color: #ffe600;
+  background: #0a1824;
+  border-color: var(--accent);
+  text-shadow: 0 0 8px #00e0ffcc, 0 0 2px #ffe600;
+}
+
+.navbar90s-link span {
+  position: relative;
+}
+
+/* Neon Underline */
+.navbar90s-underline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--accent-gradient);
+  border-radius: 3px 3px 0 0;
+  box-shadow: 0 0 10px #00e0ff99;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .navbar90s-list {
+    gap: 12px;
+    height: 48px;
+  }
+  .navbar90s-link {
+    font-size: 0.92rem;
+    padding: 7px 10px 5px 10px;
+  }
+}

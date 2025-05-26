@@ -1,0 +1,425 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,700,900&display=swap');
+
+:root {
+  --accent: #00e0ff;
+  --bg: #000;
+  --fg: #fff;
+  --muted: #b0b8c1;
+  --border: #222;
+  --font-main: 'Satoshi', 'Inter', system-ui, Arial, sans-serif;
+  --cube-size-big: 90px;
+  --cube-size-small: 48px;
+  --sphere-size: 64px;
+  --meta-size: 70px;
+  --meta-half: 35px;
+}
+
+/* Base styles */
+body, .modern2025-hero-section {
+  font-family: var(--font-main);
+}
+
+.modern2025-hero-section {
+  min-height: 100vh;
+  width: 100vw;
+  background: var(--bg);
+  color: var(--fg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+
+/* Logo */
+.modern2025-hero-logo-container {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  z-index: 10;
+}
+.modern2025-hero-logo {
+  width: 68px;
+  height: 68px;
+
+  background: transparent;
+}
+
+/* 3D Animated Grid (subtle grid lines) */
+.modern2025-hero-3d-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+      to right, #00e0ff12 0 1px, transparent 1px 80px
+    ),
+    repeating-linear-gradient(
+      to bottom, #00e0ff12 0 1px, transparent 1px 80px
+    );
+  opacity: 0.22;
+  animation: grid-move 16s linear infinite;
+}
+@keyframes grid-move {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 80px 80px, 80px 80px; }
+}
+
+/* --- REMOVED NEON BLOBS --- */
+
+/* 3D Cubes */
+.modern2025-hero-cube3d {
+  position: absolute;
+  perspective: 800px;
+  z-index: 3;
+}
+.cube3d-big {
+  top: 24%; left: 78%;
+  width: var(--cube-size-big); height: var(--cube-size-big);
+  animation: cube-spin-big 8s linear infinite;
+}
+.cube3d-small {
+  bottom: 18%; left: 16%;
+  width: var(--cube-size-small); height: var(--cube-size-small);
+  animation: cube-spin-small 12s linear infinite;
+}
+.cube {
+  width: 100%; height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+}
+.cube .face {
+  position: absolute;
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, #00e0ff55 40%, #fff1 100%);
+  border: 2px solid #00e0ff33;
+  opacity: 0.85;
+  box-shadow: 0 2px 8px #00e0ff33;
+}
+.cube .front  { transform: rotateY(0deg) translateZ(45px); }
+.cube .back   { transform: rotateY(180deg) translateZ(45px); }
+.cube .right  { transform: rotateY(90deg) translateZ(45px); }
+.cube .left   { transform: rotateY(-90deg) translateZ(45px); }
+.cube .top    { transform: rotateX(90deg) translateZ(45px); }
+.cube .bottom { transform: rotateX(-90deg) translateZ(45px); }
+.cube3d-big .cube .face { border-radius: 12px; }
+.cube3d-small .cube .face { border-radius: 7px; }
+@keyframes cube-spin-big {
+  0% { transform: rotateY(0deg) rotateX(0deg);}
+  100% { transform: rotateY(360deg) rotateX(360deg);}
+}
+@keyframes cube-spin-small {
+  0% { transform: rotateY(0deg) rotateX(0deg);}
+  100% { transform: rotateY(-360deg) rotateX(-360deg);}
+}
+
+/* 3D Glass Spheres */
+.modern2025-hero-sphere {
+  position: absolute;
+  width: var(--sphere-size); height: var(--sphere-size);
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.28) 0%, rgba(0,224,255,0.12) 100%);
+  box-shadow: 0 8px 32px 0 rgba(0,224,255,0.18), 0 1.5px 8px #fff2;
+  z-index: 3;
+  overflow: hidden;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  backdrop-filter: blur(8px) saturate(180%);
+  -webkit-backdrop-filter: blur(8px) saturate(180%);
+  opacity: 0.92;
+  transition: box-shadow 0.2s;
+}
+.sphere1 { top: 24%; left: 19%; animation: sphere1-float 7s ease-in-out infinite alternate;}
+.sphere2 { bottom: 20%; right: 23%; animation: sphere2-float 10s ease-in-out infinite alternate;}
+@keyframes sphere1-float { 0% {transform: translateY(0);} 100% {transform: translateY(-28px);} }
+@keyframes sphere2-float { 0% {transform: translateY(0);} 100% {transform: translateY(22px);} }
+
+/* Glass highlight for spheres */
+.modern2025-hero-sphere::before {
+  content: "";
+  position: absolute;
+  top: 12%;
+  left: 18%;
+  width: 40%;
+  height: 30%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.05) 100%);
+  border-radius: 50%;
+  filter: blur(1.5px);
+  opacity: 0.85;
+  pointer-events: none;
+}
+.modern2025-hero-sphere::after {
+  content: "";
+  position: absolute;
+  bottom: 18%;
+  right: 18%;
+  width: 18%;
+  height: 15%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.01) 100%);
+  border-radius: 50%;
+  filter: blur(1.5px);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Remove old .sphere-highlight markup if present */
+
+/* Metamorphix Shape (3D abstract) */
+.modern2025-hero-metamorphix-container {
+  position: absolute;
+  bottom: 10%; right: 10%;
+  width: var(--meta-size); height: var(--meta-size);
+  perspective: 700px;
+  z-index: 4;
+  animation: meta-float 8s ease-in-out infinite alternate;
+}
+@keyframes meta-float {
+  0% {transform: translateY(0);}
+  100% {transform: translateY(-18px);}
+}
+.modern2025-hero-metamorphix-shape {
+  width: 100%; height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: meta-spin 10s linear infinite;
+}
+@keyframes meta-spin {
+  0% { transform: rotateY(0deg) rotateX(0deg);}
+  100% { transform: rotateY(360deg) rotateX(360deg);}
+}
+.modern2025-hero-metamorphix-shape .face {
+  position: absolute;
+  width: var(--meta-size); height: var(--meta-size);
+  background: linear-gradient(135deg, #00e0ff77 30%, #fff2 100%);
+  border: 1.5px solid #00e0ff33;
+  opacity: 0.88;
+  box-shadow: 0 2px 8px #00e0ff33;
+  border-radius: 10px;
+}
+.modern2025-hero-metamorphix-shape .face-front  { transform: rotateY(0deg)   translateZ(var(--meta-half));}
+.modern2025-hero-metamorphix-shape .face-back   { transform: rotateY(180deg) translateZ(var(--meta-half));}
+.modern2025-hero-metamorphix-shape .face-right  { transform: rotateY(90deg)  translateZ(var(--meta-half));}
+.modern2025-hero-metamorphix-shape .face-left   { transform: rotateY(-90deg) translateZ(var(--meta-half));}
+.modern2025-hero-metamorphix-shape .face-top    { transform: rotateX(90deg)  translateZ(var(--meta-half));}
+.modern2025-hero-metamorphix-shape .face-bottom { transform: rotateX(-90deg) translateZ(var(--meta-half));}
+
+/* Main Content */
+.modern2025-hero-main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 70vh;
+  z-index: 5;
+}
+
+.modern2025-hero-text {
+  margin-bottom: 100px;
+  flex: 2 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 8vw;
+}
+
+.modern2025-hero-title {
+  font-size: 5.5rem;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+  color: transparent; /* Text is transparent */
+  -webkit-text-stroke: 2px #00e0ff; /* Blue outline */
+  margin-bottom: 0;
+  background: none;
+  text-shadow: none;
+}
+
+.modern2025-hero-inline-block {
+  display: inline-block;
+  color: transparent; /* Transparent text */
+  -webkit-text-stroke: 2.5px #00e0ff; /* Blue outline */
+  font-family: inherit;
+  font-size: 1em;
+  margin-right: 1.5px;
+  margin-left: 1.5px;
+  background: none;
+  text-shadow: none;
+}
+
+
+.modern2025-hero-sidebar {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 28px;
+  padding-right: 8vw;
+}
+
+.modern2025-hero-sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+  background: transparent;
+  border-radius: 16px;
+  padding: 12px 24px;
+  border: 1.5px solid var(--border);
+  box-shadow: 0 2px 16px #00e0ff22;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.16s;
+}
+.modern2025-hero-sidebar-link:hover,
+.modern2025-hero-sidebar-link:focus {
+  background: var(--accent);
+  color: #000;
+  box-shadow: 0 4px 24px #00e0ff44;
+  transform: scale(1.07);
+}
+
+.modern2025-hero-sidebar-icon {
+  font-size: 1.4em;
+}
+
+.modern2025-hero-scroll-indicator {
+  position: absolute;
+  bottom: 34px;
+  left: 47%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 15;
+  opacity: 0.82;
+}
+
+.modern2025-hero-scroll-arrow {
+  font-size: 1.7rem;
+  color: var(--accent);
+  margin-bottom: 2px;
+  text-shadow: 0 0 10px #00e0ff99;
+}
+
+.modern2025-hero-scroll-text {
+  font-size: 1.1rem;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .modern2025-hero-main {
+    flex-direction: column;
+    min-height: 60vh;
+    padding: 0 0 0 0;
+  }
+  .modern2025-hero-text, .modern2025-hero-sidebar {
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+  }
+  .modern2025-hero-text {
+    padding-top: 80px;
+    padding-left: 0;
+  }
+  .modern2025-hero-sidebar {
+    flex-direction: row;
+    gap: 18px;
+    padding-bottom: 32px;
+    padding-right: 0;
+  }
+  .modern2025-hero-logo-container {
+    position: static;
+    margin-bottom: 24px;
+  }
+  .modern2025-hero-cube3d.cube3d-big,
+  .modern2025-hero-cube3d.cube3d-small,
+  .modern2025-hero-sphere.sphere1,
+  .modern2025-hero-sphere.sphere2,
+  .modern2025-hero-metamorphix-container {
+    display: none;
+  }
+  .modern2025-hero-title {
+    font-size: 3.2rem;
+  }
+  .modern2025-hero-scroll-arrow {
+    font-size: 1.2rem;
+  }
+  .modern2025-hero-scroll-text {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .modern2025-hero-title {
+    font-size: 2.1rem;
+  }
+  .modern2025-hero-sidebar-link {
+    padding: 10px 12px;
+    font-size: 1rem;
+  }
+}
+.animated-blue-border {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 16px;
+  z-index: 1;
+  max-width: 90vw;
+  max-height: 90vw;
+  margin: 0 auto;
+}
+
+.animated-blue-border > * {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+/* The animated border effect */
+.animated-blue-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 3px;
+  background:
+    conic-gradient(
+      from var(--angle, 0deg),
+      transparent 0deg 60deg,
+      #00e0ff 80deg 120deg,
+      transparent 140deg 360deg
+    );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 3;
+  pointer-events: none;
+  animation: border-spin 2.5s linear infinite;
+}
+
+@keyframes border-spin {
+  to {
+    --angle: 360deg;
+  }
+}
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}

@@ -1,0 +1,129 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,700,900&display=swap');
+
+:root {
+  --accent: #00e0ff;
+  --bg: #000;
+  --fg: #fff;
+  --muted: #b0b8c1;
+  --border: #222;
+  --font-main: 'Satoshi', 'Inter', system-ui, Arial, sans-serif;
+}
+
+body, .modern2025-about-section {
+  font-family: var(--font-main);
+}
+
+.modern2025-about-section {
+  min-height: 100vh;
+  min-width: 100vw;
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg);
+  color: var(--fg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.modern2025-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 48px;
+  align-items: center;
+  background: #000;
+  border-radius: 32px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+  border: 2px solid var(--border);
+  max-width: 900px;
+  width: 100%;
+  padding: 48px 32px;
+  position: relative;
+}
+
+.modern2025-photo-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modern2025-photo {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent);
+  box-shadow: 0 6px 32px rgba(0,224,255,0.10);
+  object-fit: cover;
+  background: #111;
+  transition: transform 0.3s;
+}
+.modern2025-photo-block:hover .modern2025-photo {
+  transform: scale(1.04) rotate(-2deg);
+}
+
+.modern2025-content h1 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  margin-bottom: 24px;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+}
+.modern2025-bold { color: var(--fg); }
+.modern2025-accent { color: var(--accent); }
+
+.modern2025-desc {
+  color: var(--muted);
+  font-size: 1.18rem;
+  line-height: 1.7;
+  margin-bottom: 32px;
+  max-width: 500px;
+}
+
+.modern2025-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 8px;
+}
+.modern2025-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 24px;
+  background: transparent;
+  color: var(--fg);
+  border: 1px solid var(--accent);
+  border-radius: 32px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0,224,255,0.07);
+}
+.modern2025-btn:hover, .modern2025-btn:focus {
+  background: var(--accent);
+  color: #000;
+}
+.modern2025-btn-resume {
+  border-color: #fff;
+  color: #fff;
+  background: var(--accent);
+}
+.modern2025-btn-resume:hover, .modern2025-btn-resume:focus {
+  background: #fff;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+@media (max-width: 900px) {
+  .modern2025-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 32px 12px;
+  }
+  .modern2025-photo-block {
+    margin-bottom: 0;
+  }
+}

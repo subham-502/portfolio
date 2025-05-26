@@ -1,0 +1,172 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,700,900&display=swap');
+
+:root {
+  --accent: #00e0ff;
+  --bg: #000;
+  --fg: #fff;
+  --muted: #b0b8c1;
+  --border: #222;
+  --font-main: 'Satoshi', 'Inter', system-ui, Arial, sans-serif;
+}
+
+body, .modern2025-projects-section {
+  font-family: var(--font-main);
+}
+
+.modern2025-projects-section {
+  min-height: 100vh;
+  width: 100vw;
+  background: var(--bg);
+  color: var(--fg);
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 80px 16px 60px 16px;
+  box-sizing: border-box;
+}
+
+/* Floating background logos */
+.modern2025-projects-bg-logo {
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.07;
+  filter: blur(1.5px);
+  transition: opacity 0.7s;
+}
+
+/* Neon Animated Heading */
+.modern2025-projects-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 48px;
+  letter-spacing: 1px;
+  text-align: center;
+  z-index: 2;
+  color: transparent; /* Text is transparent */
+  -webkit-text-stroke: 1px #00e0ff; /* Blue outline */
+
+}
+
+.modern2025-projects-title-letter {
+  display: inline-block;
+  font-family: inherit;
+}
+
+.modern2025-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 32px; /* or your preferred spacing */
+  justify-items: center;
+  width: 100%;
+  max-width: 1600px; /* optional: controls max grid width */
+  margin: 0 auto;
+  padding: 40px 16px 0 16px;
+}
+
+
+/* Project Card */
+.modern2025-projects-card {
+  right: 10px;;
+  max-height: 400px;;
+  width: 250px;
+  background: #111;
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 24px rgba(0,224,255,0.07);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.modern2025-projects-card:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.modern2025-projects-card-imgwrap {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
+  background: #222;
+  border-bottom: 1.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modern2025-projects-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s cubic-bezier(.4,2,.6,1);
+}
+.modern2025-projects-card:hover .modern2025-projects-card-img {
+  transform: scale(1.06) rotate(-1deg);
+}
+
+.modern2025-projects-card-content {
+  padding: 24px 22px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.modern2025-projects-card-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--fg);
+  margin-bottom: 4px;
+  letter-spacing: -0.5px;
+}
+
+.modern2025-projects-card-desc {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.modern2025-projects-card-link {
+  display: inline-block;
+  background: var(--accent);
+  color: #000;
+  font-weight: 700;
+  padding: 8px 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 1rem;
+  box-shadow: 0 2px 16px #00e0ff33;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.14s;
+  margin-top: 8px;
+}
+.modern2025-projects-card-link:hover,
+.modern2025-projects-card-link:focus {
+  background: #fff;
+  color: var(--accent);
+  box-shadow: 0 4px 24px #00e0ff44;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .modern2025-projects-grid {
+    gap: 22px;
+    padding: 0 5px;
+  }
+  .modern2025-projects-card-content {
+    padding: 18px 10px 14px 10px;
+  }
+}

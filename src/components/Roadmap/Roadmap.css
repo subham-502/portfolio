@@ -1,0 +1,134 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,700,900&display=swap');
+
+:root {
+  --accent: #00e0ff;
+  --bg: #000;
+  --fg: #fff;
+  --muted: #b0b8c1;
+  --border: #222;
+  --font-main: 'Satoshi', 'Inter', system-ui, Arial, sans-serif;
+}
+
+body, .modern2025-roadmap-section {
+  font-family: var(--font-main);
+}
+
+.modern2025-roadmap-section {
+  min-height: 100vh;
+  width: 100vw;
+  background: var(--bg);
+  color: var(--fg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 16px 60px 16px;
+  box-sizing: border-box;
+}
+
+.modern2025-roadmap-title {
+  font-size: 2.4rem;
+  font-weight: 900;
+  margin-bottom: 48px;
+  letter-spacing: -1px;
+  text-align: center;
+}
+
+.modern2025-roadmap-highlight {
+  color: var(--accent);
+}
+
+.modern2025-roadmap-timelines {
+  display: flex;
+  gap: 56px;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.modern2025-roadmap-timeline {
+  position: relative;
+  flex: 1 1 0;
+  max-width: 420px;
+  min-width: 260px;
+  padding: 0 12px;
+}
+
+.modern2025-roadmap-animated-line {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--accent), #222 90%);
+  border-radius: 2px;
+  transform-origin: top;
+  z-index: 0;
+}
+
+.modern2025-roadmap-timeline-items {
+  position: relative;
+  z-index: 1;
+}
+
+.modern2025-roadmap-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.modern2025-roadmap-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid #fff;
+  margin-right: 20px;
+  margin-top: 5px;
+  box-shadow: 0 2px 8px rgba(0,224,255,0.12);
+  z-index: 2;
+}
+
+.modern2025-roadmap-content {
+  background: #111;
+  border-radius: 18px;
+  padding: 18px 22px;
+  box-shadow: 0 2px 24px rgba(0,224,255,0.06);
+  border: 1.5px solid var(--border);
+  min-width: 0;
+  max-width: 340px;
+}
+
+.modern2025-roadmap-date {
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  letter-spacing: 1px;
+}
+
+.modern2025-roadmap-step {
+  color: var(--fg);
+  font-size: 1rem;
+  font-weight: 900;
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+
+.modern2025-roadmap-desc {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .modern2025-roadmap-timelines {
+    flex-direction: column;
+    gap: 56px;
+    align-items: center;
+  }
+  .modern2025-roadmap-timeline {
+    max-width: 100%;
+  }
+}
