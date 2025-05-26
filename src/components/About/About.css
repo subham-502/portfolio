@@ -58,6 +58,8 @@ body, .modern2025-about-section {
   object-fit: cover;
   background: #111;
   transition: transform 0.3s;
+  max-width: 90vw;
+  max-height: 90vw;
 }
 .modern2025-photo-block:hover .modern2025-photo {
   transform: scale(1.04) rotate(-2deg);
@@ -117,13 +119,78 @@ body, .modern2025-about-section {
   border-color: var(--accent);
 }
 
+/* Tablet breakpoint */
 @media (max-width: 900px) {
   .modern2025-grid {
     grid-template-columns: 1fr;
     gap: 32px;
     padding: 32px 12px;
+    max-width: 98vw;
   }
   .modern2025-photo-block {
     margin-bottom: 0;
+  }
+  .modern2025-photo {
+    width: 220px;
+    height: 220px;
+    max-width: 60vw;
+    max-height: 60vw;
+  }
+  .modern2025-content h1 {
+    font-size: 2.1rem;
+  }
+  .modern2025-desc {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 600px) {
+  .modern2025-about-section {
+    padding: 0;
+    min-height: 100dvh;
+    height: auto;
+  }
+  .modern2025-grid {
+    padding: 18px 2vw;
+    gap: 20px;
+    border-radius: 18px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+  }
+  .modern2025-photo {
+    width: 120px;
+    height: 120px;
+    max-width: 80vw;
+    max-height: 80vw;
+  }
+  .modern2025-content h1 {
+    font-size: 1.3rem;
+    margin-bottom: 14px;
+  }
+  .modern2025-desc {
+    font-size: 0.98rem;
+    margin-bottom: 18px;
+  }
+  .modern2025-buttons {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+  .modern2025-btn, .modern2025-btn-resume {
+    width: 100%;
+    font-size: 0.98rem;
+    padding: 10px 0;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .modern2025-photo {
+    width: 90px;
+    height: 90px;
+  }
+  .modern2025-content h1 {
+    font-size: 1.05rem;
   }
 }

@@ -1,9 +1,8 @@
 @import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,700,900&display=swap');
 
 :root {
-  
   --accent: #00e0ff;
-  --bg:#000;
+  --bg: #000;
   --fg: #fff;
   --muted: #b0b8c1;
   --border: #222;
@@ -15,7 +14,6 @@
   --meta-half: 35px;
 }
 
-/* Base styles */
 body, .modern2025-hero-section {
   font-family: var(--font-main);
 }
@@ -44,11 +42,10 @@ body, .modern2025-hero-section {
 .modern2025-hero-logo {
   width: 68px;
   height: 68px;
-
   background: transparent;
 }
 
-/* 3D Animated Grid (subtle grid lines) */
+/* 3D Animated Grid */
 .modern2025-hero-3d-grid {
   position: absolute;
   inset: 0;
@@ -67,8 +64,6 @@ body, .modern2025-hero-section {
   0% { background-position: 0 0, 0 0; }
   100% { background-position: 80px 80px, 80px 80px; }
 }
-
-/* --- REMOVED NEON BLOBS --- */
 
 /* 3D Cubes */
 .modern2025-hero-cube3d {
@@ -136,7 +131,6 @@ body, .modern2025-hero-section {
 @keyframes sphere1-float { 0% {transform: translateY(0);} 100% {transform: translateY(-28px);} }
 @keyframes sphere2-float { 0% {transform: translateY(0);} 100% {transform: translateY(22px);} }
 
-/* Glass highlight for spheres */
 .modern2025-hero-sphere::before {
   content: "";
   position: absolute;
@@ -164,9 +158,7 @@ body, .modern2025-hero-section {
   pointer-events: none;
 }
 
-/* Remove old .sphere-highlight markup if present */
-
-/* Metamorphix Shape (3D abstract) */
+/* Metamorphix Shape */
 .modern2025-hero-metamorphix-container {
   position: absolute;
   bottom: 10%; right: 10%;
@@ -216,6 +208,7 @@ body, .modern2025-hero-section {
   margin: 0 auto;
   min-height: 70vh;
   z-index: 5;
+  padding: 0 4vw;
 }
 
 .modern2025-hero-text {
@@ -233,17 +226,18 @@ body, .modern2025-hero-section {
   font-weight: 900;
   letter-spacing: -1.5px;
   line-height: 1.1;
-  color: transparent; /* Text is transparent */
-  -webkit-text-stroke: 2px #00e0ff; /* Blue outline */
+  color: transparent;
+  -webkit-text-stroke: 2px #00e0ff;
   margin-bottom: 0;
   background: none;
   text-shadow: none;
+  word-break: break-word;
 }
 
 .modern2025-hero-inline-block {
   display: inline-block;
-  color: transparent; /* Transparent text */
-  -webkit-text-stroke: 2.5px #00e0ff; /* Blue outline */
+  color: transparent;
+  -webkit-text-stroke: 2.5px #00e0ff;
   font-family: inherit;
   font-size: 1em;
   margin-right: 1.5px;
@@ -251,7 +245,6 @@ body, .modern2025-hero-section {
   background: none;
   text-shadow: none;
 }
-
 
 .modern2025-hero-sidebar {
   flex: 1 1 0;
@@ -315,12 +308,14 @@ body, .modern2025-hero-section {
   letter-spacing: 1px;
 }
 
-/* Responsive */
+/* Responsive Breakpoints */
+
+/* Tablet: Stack columns, shrink padding, hide 3D decor */
 @media (max-width: 900px) {
   .modern2025-hero-main {
     flex-direction: column;
     min-height: 60vh;
-    padding: 0 0 0 0;
+    padding: 0 2vw;
   }
   .modern2025-hero-text, .modern2025-hero-sidebar {
     padding: 0;
@@ -328,8 +323,9 @@ body, .modern2025-hero-section {
     justify-content: center;
   }
   .modern2025-hero-text {
-    padding-top: 80px;
+    padding-top: 60px;
     padding-left: 0;
+    margin-bottom: 36px;
   }
   .modern2025-hero-sidebar {
     flex-direction: row;
@@ -359,15 +355,61 @@ body, .modern2025-hero-section {
   }
 }
 
+/* Mobile: Reduce font, stack sidebar, shrink padding */
 @media (max-width: 600px) {
+  .modern2025-hero-main {
+    padding: 0 1vw;
+    min-height: 50vh;
+  }
   .modern2025-hero-title {
     font-size: 2.1rem;
+    -webkit-text-stroke-width: 1.2px;
+  }
+  .modern2025-hero-sidebar {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    padding-bottom: 18px;
   }
   .modern2025-hero-sidebar-link {
     padding: 10px 12px;
     font-size: 1rem;
+    width: 90vw;
+    max-width: 320px;
+    justify-content: center;
+  }
+  .modern2025-hero-text {
+    margin-bottom: 16px;
+    padding-top: 32px;
+  }
+  .modern2025-hero-logo {
+    width: 48px;
+    height: 48px;
+  }
+  .modern2025-hero-scroll-indicator {
+    bottom: 16px;
+  }
+  .modern2025-hero-scroll-arrow {
+    font-size: 1rem;
+  }
+  .modern2025-hero-scroll-text {
+    font-size: 0.88rem;
   }
 }
+
+/* XS Mobile: Further shrink */
+@media (max-width: 400px) {
+  .modern2025-hero-title {
+    font-size: 1.3rem;
+    -webkit-text-stroke-width: 1px;
+  }
+  .modern2025-hero-sidebar-link {
+    font-size: 0.9rem;
+    padding: 8px 6px;
+  }
+}
+
+/* Responsive animated border */
 .animated-blue-border {
   position: relative;
   width: 300px;
@@ -378,7 +420,14 @@ body, .modern2025-hero-section {
   max-height: 90vw;
   margin: 0 auto;
 }
-
+@media (max-width: 600px) {
+  .animated-blue-border {
+    width: 160px;
+    height: 160px;
+    max-width: 95vw;
+    max-height: 95vw;
+  }
+}
 .animated-blue-border > * {
   width: 100%;
   height: 100%;
@@ -386,8 +435,6 @@ body, .modern2025-hero-section {
   position: relative;
   z-index: 2;
 }
-
-/* The animated border effect */
 .animated-blue-border::before {
   content: "";
   position: absolute;
@@ -413,7 +460,6 @@ body, .modern2025-hero-section {
   pointer-events: none;
   animation: border-spin 2.5s linear infinite;
 }
-
 @keyframes border-spin {
   to {
     --angle: 360deg;

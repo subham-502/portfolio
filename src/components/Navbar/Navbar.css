@@ -20,6 +20,7 @@
   top: 0;
   z-index: 1000;
   box-shadow: 0 1.5px 0 #00e0ff44;
+
 }
 
 /* Navbar List */
@@ -32,7 +33,11 @@
   margin: 0;
   padding: 0;
   height: 64px;
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
 }
+.navbar90s-list::-webkit-scrollbar { display: none; }
 
 /* Navbar Items */
 .navbar90s-item {
@@ -61,6 +66,8 @@
   outline: none;
   box-shadow: none;
   text-shadow: 0 1px 0 #111, 0 0 8px #00e0ff88;
+  min-width: 80px;
+  justify-content: center;
 }
 
 .navbar90s-link:focus {
@@ -95,14 +102,44 @@
   pointer-events: none;
 }
 
-/* Responsive */
-@media (max-width: 700px) {
+/* Tablet */
+@media (max-width: 900px) {
   .navbar90s-list {
-    gap: 12px;
-    height: 48px;
+    gap: 18px;
+    height: 54px;
   }
   .navbar90s-link {
-    font-size: 0.92rem;
-    padding: 7px 10px 5px 10px;
+    font-size: 0.98rem;
+    padding: 8px 14px 6px 14px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .navbar90s-list {
+    gap: 8px;
+    height: 44px;
+    padding: 0 2px;
+    justify-content: flex-start;
+  }
+  .navbar90s-link {
+    font-size: 0.88rem;
+    padding: 6px 8px 4px 8px;
+    min-width: 60px;
+  }
+}
+
+/* Extra Small Screens */
+@media (max-width: 420px) {
+  .navbar90s-list {
+    gap: 4px;
+    height: 38px;
+    padding: 0 1px;
+  }
+  .navbar90s-link {
+    font-size: 0.78rem;
+    padding: 5px 4px 3px 4px;
+    min-width: 48px;
+    border-radius: 7px 7px 0 0;
   }
 }

@@ -6,7 +6,6 @@ import './Hero.css';
 import portfolio from './assets/portfolio.png';
 import bee from './assets/bee.png';
 
-
 const words = ["Welcome", "to", "My", "Portfolio"];
 
 const navItems = [
@@ -208,34 +207,24 @@ export default function Hero() {
             </motion.h1>
           </div>
 
-         <div className="modern2025-hero-image-between">
-  <div className="animated-blue-border">
-    <Tilt
-      tiltMaxAngleX={20}
-      tiltMaxAngleY={20}
-      glareEnable={true}
-      glareMaxOpacity={0.45}
-      glareColor="#ffd700"
-      glarePosition="all"
-      glareBorderRadius="16px"
-    >
-      <div className="gold-metallic-effect">
-        <img
-          src={bee}
-          alt="Bee"
-          style={{
-            width: '300px',
-            height: '300px',
-            borderRadius: '16px',
-            objectFit: 'contain',
-            display: 'block',
-          }}
-        />
-        <div className="gold-gradient-overlay" />
-      </div>
-    </Tilt>
-  </div>
-</div>
+          {/* Bee Image with 3D Tilt and Animated Border */}
+          <div className="modern2025-hero-image-between">
+            <div className="animated-blue-border">
+              <Tilt tiltMaxAngleX={20} tiltMaxAngleY={20}>
+                <img
+                  src={bee}
+                  alt="Bee"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    borderRadius: '16px',
+                    objectFit: 'contain',
+                    display: 'block',
+                  }}
+                />
+              </Tilt>
+            </div>
+          </div>
 
           {/* Sidebar */}
           <nav className="modern2025-hero-sidebar">
