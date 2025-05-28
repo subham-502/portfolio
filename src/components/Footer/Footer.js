@@ -13,7 +13,7 @@ export default function Footer() {
       <br></br>
       Hope to see you again soon!
       <p className="modern2025-footer-credit">
-        &copy; {new Date().getFullYear()} SUBHAM BASUMATART | All rights reserved.
+        &copy; {new Date().getFullYear()} SUBHAM BASUMATARY | All rights reserved.
       </p>
     </footer>
   );
