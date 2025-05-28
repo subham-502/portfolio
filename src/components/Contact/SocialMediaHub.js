@@ -6,7 +6,7 @@ import './Contact.css';
 const socialLinks = [
   {
     icon: <FaFacebook />,
-    href: 'https://www.facebook.com',
+    href: 'https://www.facebook.com/share/19BP8gP2wp/?mibextid=qi2Omg',
     color: '#1877F2',
     label: 'Facebook'
   },
@@ -30,7 +30,7 @@ const socialLinks = [
   },
   {
     icon: <FaInstagram />,
-    href: 'https://www.instagram.com',
+    href: 'https://www.instagram.com/subham_5o?igsh=bThjbzgxNHpzaDM2',
     color: '#E4405F',
     label: 'Instagram'
   }

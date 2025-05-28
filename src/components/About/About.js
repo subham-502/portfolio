@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import TypingText from './TypingText'; // Replace with <p> if you don't use TypingText
-import image from './90.jpg';
+import image from './90.png';
 import {
   FaUser,
   FaProjectDiagram,
