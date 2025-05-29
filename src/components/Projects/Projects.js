@@ -1,24 +1,27 @@
 import React, { useEffect, useState, memo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './Projects.css';
+import web from './web.jpg'; 
+import hostel from './hostel.jpg'; 
+import portfolio from './portfolio.jpg'; 
 
 const projects = [
   {
     title: 'Portfolio',
     description: 'My Personal Portfolio Website.',
-    imageUrl: '',
+    imageUrl: portfolio,
     link: 'https://github.com/subham-502/portfolio',
   },
   {
     title: 'Web-Technology Assignments',
     description: 'Linked all my web technology assignments in one place.',
-    imageUrl: '',
+    imageUrl: web,
     link: 'https://github.com/subham-502/Web-tech',
   },
   {
     title: 'Seat Allocation System',
     description: 'Developed a hostel seat allocation system using Python and Flask.',
-    imageUrl: '',
+    imageUrl: hostel,
     link: 'https://github.com/subham-502/WT-hostel_seat_allocation',
   },
   {
@@ -29,12 +32,6 @@ const projects = [
   },
 ];
 
-const backgroundLogos = [
-  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
-  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
-  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
-];
 
 const containerVariants = {
   hidden: {},
@@ -85,30 +82,7 @@ const ProjectCard = memo(({ project }) => (
 export default function Projects() {
   const [bgLogos, setBgLogos] = useState([]);
 
-  useEffect(() => {
-    // Animate floating background logos
-    const addLogo = () => {
-      if (bgLogos.length > 7) return; // limit to 7 floating logos
-      const id = Date.now() + Math.random();
-      const size = Math.floor(Math.random() * 40) + 60;
-      const top = Math.floor(Math.random() * (window.innerHeight - size));
-      const left = Math.floor(Math.random() * (window.innerWidth - size));
-      const logo = {
-        id,
-        url: backgroundLogos[Math.floor(Math.random() * backgroundLogos.length)],
-        size,
-        top,
-        left,
-      };
-      setBgLogos((prev) => [...prev, logo]);
-      setTimeout(() => {
-        setBgLogos((prev) => prev.filter((l) => l.id !== id));
-      }, 3000);
-    };
-    const interval = setInterval(addLogo, 900);
-    return () => clearInterval(interval);
-    // eslint-disable-next-line
-  }, [bgLogos.length]);
+  
 
   return (
     <section className="modern2025-projects-section">

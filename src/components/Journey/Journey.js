@@ -1,3 +1,9 @@
+import baby from "./baby.png";
+import other from "./other.png";
+import teen from "./teen.png";
+import image from "./90.png";
+
+
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -16,7 +22,7 @@ const milestones = [
     title: "Born",
     date: "13 Feb 2002",
     description: "Born in 2002/02/13.",
-    image: "/path/to/birth.jpg",
+    image:baby,
     icon: <FaBirthdayCake />,
     accent: "#ffb347"
   },
@@ -24,7 +30,7 @@ const milestones = [
     title: "Started Schooling",
     date: "2006",
     description: "Started schooling in 2006.",
-    image: "/path/to/schooling.jpg",
+    image: teen,
     icon: <FaSchool />,
     accent: "#6ec1e4"
   },
@@ -32,7 +38,7 @@ const milestones = [
     title: "Passed 10th",
     date: "2018",
     description: "Passed 10th grade in 2018.",
-    image: "/path/to/10th.jpg",
+    image: teen,
     icon: <FaBookOpen />,
     accent: "#b388ff"
   },
@@ -40,7 +46,7 @@ const milestones = [
     title: "Joined 11th",
     date: "2018",
     description: "Joined 11th grade in 2018.",
-    image: "/path/to/10th.jpg",
+    image: other,
     icon: <FaBookOpen />,
     accent: "#b388ff"
   },
@@ -48,7 +54,7 @@ const milestones = [
     title: "Passed 12th",
     date: "2020",
     description: "Passed 12th grade in 2020.",
-    image: "/path/to/12th.jpg",
+    image: other,
     icon: <FaBookOpen />,
     accent: "#ff6e6e"
   },
@@ -56,7 +62,7 @@ const milestones = [
     title: "Joined College",
     date: "2021 - 2024",
     description: 'Joined "College Name" in 2021 and graduated in 2024.',
-    image: "/path/to/college.jpg",
+    image: image,
     icon: <FaUniversity />,
     accent: "#ffd700"
   },
@@ -64,7 +70,7 @@ const milestones = [
     title: "Currently at Tezpur University",
     date: "2024 - 2026",
     description: "Currently studying at Tezpur University (Batch 2024-26).",
-    image: "/path/to/tezpur.jpg",
+    image: image,
     icon: <FaStar />,
     accent: "#00e676"
   }
