@@ -28,7 +28,7 @@ const projects = [
     title: 'Capstone Project',
     description: 'Created a comprehensive capstone project that integrates multiple technologies.',
     imageUrl: 'https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg',
-    link: 'https://example.com/social-media-dashboard',
+    link: 'https://github.com/PGI-Devs/Factory-Management-System/tree/himangshu',
   },
 ];
 
