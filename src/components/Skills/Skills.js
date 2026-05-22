@@ -9,17 +9,15 @@ import { motion } from 'framer-motion';
 import './Skills.css';
 
 const skills = [
+  { name: 'Python', icon: FaPython, color: '#306998', tooltip: 'General-purpose Language' },
   { name: 'HTML5', icon: FaHtml5, color: '#e34c26', tooltip: 'Markup Language' },
   { name: 'CSS3', icon: FaCss3Alt, color: '#264de4', tooltip: 'Styling Web Pages' },
   { name: 'JavaScript', icon: FaJsSquare, color: '#f0db4f', tooltip: 'Dynamic Logic' },
   { name: 'React', icon: FaReact, color: '#61DBFB', tooltip: 'UI Library' },
   { name: 'Node.js', icon: FaNodeJs, color: '#3C873A', tooltip: 'Backend Runtime' },
   { name: 'GitHub', icon: FaGithub, color: '#181717', tooltip: 'Version Control' },
-  { name: 'Python', icon: FaPython, color: '#306998', tooltip: 'General-purpose Language' },
   { name: 'C', icon: SiCplusplus, color: '#A8B9CC', tooltip: 'System Programming' },
   { name: 'C++', icon: SiCplusplus, color: '#00599C', tooltip: 'Object-Oriented Language' },
-  { name: 'Java', icon: FaJava, color: '#007396', tooltip: 'Enterprise Language' },
-  { name: 'Django', icon: SiDjango, color: '#2cdd8f', tooltip: 'Python Framework' },
   { name: 'MongoDB', icon: SiMongodb, color: '#4DB33D', tooltip: 'NoSQL Database' },
   { name: 'SQL', icon: SiMysql, color: '#4479A1', tooltip: 'Relational Database' },
 ];
