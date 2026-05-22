@@ -13,6 +13,17 @@ const projects = [
     link: 'https://github.com/subham-502/portfolio',
   },
   {
+    title: 'Neuro Symbolic Memory Architecture',
+    description: 'Implemented a neuro-symbolic memory architecture for efficient data retrieval and reasoning.',
+    imageUrl: web,
+    link: 'https://github.com/subham-502/neuro_symbolic_memory_architecture',
+  },
+    title: 'AI vs Human Music Detection System',
+    description: 'Developed a system to differentiate between AI-generated and human-created music using machine learning techniques.',
+    imageUrl: web,
+    link: 'https://github.com/subham-502/ai_human',
+  },
+  {
     title: 'Web-Technology Assignments',
     description: 'Linked all my web technology assignments in one place.',
     imageUrl: web,
